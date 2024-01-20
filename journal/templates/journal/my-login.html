@@ -1,0 +1,27 @@
+{% extends 'journal/navbar.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+   <div class="bg-dark h-100 p-5">
+   <br>
+        <br>
+        <br>
+        <div class="container bg-light p-4 shadow-md form-style">
+         {% if message %}
+          <p class="text-danger" style="font-weight: bolder;">{{message}}</p>
+          <a class="btn btn-outline-success" href="{% url 'login' %}">LogIn</a>
+         {% else %}
+         <h3>LogIn to Your Account</h3>
+         <h6>Share Your Thoughts Today!</h6>
+        <form method="post" autocomplete="off">
+            {% csrf_token %}
+           
+            {{Loginform|crispy}}
+            <div class=""><a style="text-decoration: none;" href="{% url 'reset_password' %}">Forgot Password ?</a></div>
+            <div class="text-center"><button type="submit" class="btn btn-success">LogIn Account</button></div>
+        </form>
+        <div class="text-center"><a style="text-decoration: none;" href="{% url 'register' %}">Don't have account ?</a></div>
+{% endif %}
+     </div>
+   <br>
+</div>
+{% endblock %}

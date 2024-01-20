@@ -1,0 +1,87 @@
+{% load static %}
+<html>
+    <head>
+            <meta charset="utf-8" />
+            
+
+            <meta name="viewport" content="width-device-width, initial-scale=1, maximum-scale=1"/>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet">
+
+
+    </head>
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary justify-content-center">
+
+        <a class="navbar-brand main-heading text-white"> 
+                
+          &nbsp; Edenthought 
+        
+        </a>
+    
+    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+    
+        </button>
+    
+    
+          <div class="collapse navbar-collapse text-center" id="navbarNavDropdown">
+    
+            
+            <ul class="navbar-nav ms-auto">
+    
+    
+              &nbsp;     &nbsp;     &nbsp; 
+    
+    
+              <li class="nav-link">
+          
+                <a class="nav-link text-white"  href="{% url 'dashboard' %}">Dashboard</a>
+    
+              </li>
+    
+    
+              &nbsp;     &nbsp;     &nbsp; 
+              
+    
+              <li class="nav-link">
+          
+                <a class="nav-link text-white" href="{% url 'create_thought' %}">Create Thought</a>
+    
+              </li>
+    
+    
+              &nbsp;     &nbsp;     &nbsp; 
+              
+              <li class="nav-link">
+          
+                <a class="nav-link text-white" href="{% url 'my_thought'  %}">View Thought</a>
+    
+              </li>
+
+              <li class="nav-link">
+          
+                <a class="nav-link text-white" href="{% url 'profile_management'  %}">Profile Management</a>
+    
+              </li>
+
+              <li class="nav-link">
+
+                <a class="nav-link text-white" href="{% url 'login'  %}">LogIn</a>
+
+              </li>
+    
+    
+            </ul>
+          
+            
+          </div>
+    
+    
+    </nav>
+{% block content %}
+
+{% endblock %}
+
+</html>

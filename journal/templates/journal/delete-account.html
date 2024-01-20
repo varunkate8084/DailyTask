@@ -1,0 +1,22 @@
+{% extends 'journal/navbar.html' %}
+
+{% block content %}
+
+    <div class="bg-dark h-100 p-5">
+          <br>
+          <br>
+            <div class="container bg-light  p-4 shadow-md form-style">
+                <!-- <h3>Update Username and Email</h3> -->
+                <h5>Are You Sure You Want to Delete Your Account ?</h5>
+                <br>
+                <form method="post" autocomplete="off">
+                    {% csrf_token %}
+                    <div class="text-center"><button type="submit" class="btn btn-danger">Yes, Delete My Account</button></div>
+                    <a class="btn btn-outline-primary" href="{% url 'profile_management' %}">Cancel</a>
+                </form>
+            </div>
+            <br>
+           
+    </div>
+
+    {% endblock %}    

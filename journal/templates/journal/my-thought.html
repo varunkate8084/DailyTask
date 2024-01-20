@@ -1,0 +1,21 @@
+{% extends 'journal/navbar.html' %}
+{% block content %}
+
+      <div class="bg-dark h-auto p-5">
+          <br>
+          <h3 class="text-white text-center">My Thoughts</h3><br>
+          {% for thoughts in AllThought %}
+          <div class="container bg-light p-4 shadow-md form-style">
+           <p style="font-size: 15px;"><b>Title:</b> {{thoughts.title}}</p>
+            <p style="font-size: 15px;"><b>Content:</b> {{thoughts.content}}</p>
+            <p style="font-size: 15px;"><b>Date:</b> {{thoughts.date_posted}}</p><hr>
+            <a href="{% url 'update_thought' thoughts.id %}" class="btn btn-outline-primary">Update</a>
+            <a href="{% url 'delete_thought' thoughts.id %}" class="btn btn-outline-danger" style="float:right;">Delete</a>
+          </div>
+          <br>
+          {% endfor %}
+          <br>
+      </div>
+
+
+{% endblock %}

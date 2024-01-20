@@ -1,0 +1,21 @@
+{% extends 'journal/navbar.html' %}
+{% block content %}
+
+      <div class="bg-dark h-100 p-5">
+          <br>
+          <br>
+          <div class="container bg-light p-4 shadow-md form-style">
+              <h3>Delete Thoughts</h3>
+              <p>Are you sure that you want to delete this thought ?</p>
+              <br>
+              <form method="post" autocomplete="off">
+                {% csrf_token %}
+                <div class="text-center"><button type="submit" class="btn btn-danger">Delete Thought</button></div>
+                <a class="btn btn-outline-success" href="{% url 'my_thought' %}">Cancel</a>
+            </form>
+          </div>
+          <br>
+      </div>
+
+
+{% endblock %}
